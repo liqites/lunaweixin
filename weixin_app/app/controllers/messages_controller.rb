@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
 		
 	end
 
+	def hello
+		render json: 'hello,world'
+	end
+
 	def index
 		puts TOKEN
 		#验证token
