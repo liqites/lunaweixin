@@ -7,10 +7,12 @@
 default: &default
   adapter: mysql2
   pool: 5
-  timeout: 5000
   username: weixin_admin
   password: weixin_admin123
-  sock: /var/run/mysqld/mysql.sock
+  reconnect: false
+  timeout: false
+  socket: /var/run/mysqld/mysql.sock
+  encoding: utf8
 
 development:
   <<: *default
