@@ -14,19 +14,20 @@
 ActiveRecord::Schema.define(version: 20150717181912) do
 
   create_table "attendences", force: :cascade do |t|
-    t.integer  "weixin_user_id"
-    t.string   "message"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "weixin_user_id", limit: 4
+    t.string   "message",        limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "attendences", ["weixin_user_id"], name: "index_attendences_on_weixin_user_id"
+  add_index "attendences", ["weixin_user_id"], name: "index_attendences_on_weixin_user_id", using: :btree
 
   create_table "weixin_users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "openid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "openid",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "attendences", "weixin_users"
 end
