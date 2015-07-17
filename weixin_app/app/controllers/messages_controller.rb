@@ -1,22 +1,33 @@
 class MessagesController < ApplicationController
 	TOKEN=SETTING['auth']['token']
 
-	before_action :check_signature
-
 	def receive
 		#收到信息时，记录下用户和签到时间
+		
 	end
 
 	def index
+		puts TOKEN
 		#验证token
-		signature = params[:signature]
-		timestamp = params[:timestamp]
-		nonce = parmas[:nonce]
-		tmparr = []
+		if check_signature
+			render json: params[:echostr]
+		else
+			render json: params[:echostr]+'sa'
+		end
 	end
 
 	private
 	def check_signature
-
+		signature = params[:signature]
+		timestamp = params[:timestamp]
+		nonce = params[:nonce]
+		tmparr = [signature,timestamp,nonce]
+		tmpstr = tmparr.sort.join
+		tmpstr = Digest::SHA1.hexdigest(tmpstr)
+		if tmpstr == signature
+			return true
+		else
+			return false
+		end
 	end
 end

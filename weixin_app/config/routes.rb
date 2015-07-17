@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :attendences
-  resources :weixin_users
+  #resources :attendences
+  #resources :weixin_users
+
   root 'messages#index'
+  post '/' => 'messages#create', defaults: {format: 'xml'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
