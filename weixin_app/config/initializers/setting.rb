@@ -1,0 +1,1 @@
+SETTING = Settings::Hash.new("config/settings.yml")
