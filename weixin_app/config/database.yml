@@ -11,7 +11,7 @@ default: &default
   password: weixin_admin123
   reconnect: false
   timeout: false
-  socket: /var/run/mysqld/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
   encoding: utf8
 
 development:
