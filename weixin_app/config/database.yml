@@ -4,6 +4,14 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+
+sqlite_def: &sqlite_def
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+
+
 default: &default
   adapter: mysql2
   pool: 5
@@ -15,8 +23,8 @@ default: &default
   encoding: utf8
 
 development:
-  <<: *default
-  database: weixinapp_db
+  <<: *sqlite_def
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
