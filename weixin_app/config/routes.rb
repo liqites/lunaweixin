@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'messages#index'
   get '/hello' => 'messages#hello'
-  post '/' => 'messages#receive', defaults: {format: 'xml'}
+  post '/' => 'messages#receive'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

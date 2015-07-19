@@ -3,7 +3,8 @@ class MessagesController < ApplicationController
 
 	def receive
 		#收到信息时，记录下用户和签到时间
-		
+		xml_data =  request.raw_post
+		render json: {result: 'success'}
 	end
 
 	def hello
