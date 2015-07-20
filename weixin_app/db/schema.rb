@@ -11,23 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717181912) do
+ActiveRecord::Schema.define(version: 20150720043055) do
 
   create_table "attendences", force: :cascade do |t|
-    t.integer  "weixin_user_id", limit: 4
-    t.string   "message",        limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "weixin_user_id"
+    t.string   "message"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "message_id"
   end
 
-  add_index "attendences", ["weixin_user_id"], name: "index_attendences_on_weixin_user_id", using: :btree
+  add_index "attendences", ["message_id"], name: "index_attendences_on_message_id"
+  add_index "attendences", ["weixin_user_id"], name: "index_attendences_on_weixin_user_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "to_user"
+    t.string   "from_user"
+    t.datetime "create_time"
+    t.string   "msg_type"
+    t.string   "content"
+    t.string   "msg_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "weixin_users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "openid",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.string   "openid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "attendences", "weixin_users"
 end

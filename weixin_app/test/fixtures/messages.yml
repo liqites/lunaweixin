@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  to_user: MyString
+  from_user: MyString
+  create_time: 2015-07-20 10:21:20
+  msg_type: MyString
+  content: MyString
+  msg_id: MyString
+
+two:
+  to_user: MyString
+  from_user: MyString
+  create_time: 2015-07-20 10:21:20
+  msg_type: MyString
+  content: MyString
+  msg_id: MyString
