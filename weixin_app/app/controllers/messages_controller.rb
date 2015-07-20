@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
 	TOKEN=SETTING['auth']['token']
+	START_TIME = 6
+	END_TIME = 8
 
 	def receive
 		#收到信息时，记录下用户和签到时间
