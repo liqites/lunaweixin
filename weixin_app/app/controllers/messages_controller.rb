@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
 		end
 
 		#创建消息
-		message = Message.create({to_user:msgdata[:ToUserName],from_user:msgdata[:FromUserName],create_time:msgdata[:CreateTime],msg_type:msgdata[:MsgType],content:msgdata[:content],msg_id:msgdata[:msg_id]})
+		message = Message.create({to_user:msgdata[:ToUserName],from_user:msgdata[:FromUserName],create_time:Time.new(msgdata[:CreateTime]),msg_type:msgdata[:MsgType],content:msgdata[:Content],msg_id:msgdata[:MsgId]})
 
 		#签到逻辑
 		#-------------

@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20150720060405) do
 
   create_table "attendences", force: :cascade do |t|
     t.integer  "weixin_user_id"
-    t.string   "message"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "message_id"
+    t.string   "content"
   end
 
   add_index "attendences", ["message_id"], name: "index_attendences_on_message_id"

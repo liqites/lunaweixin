@@ -7,7 +7,7 @@ class Attendence < ActiveRecord::Base
   def self.create_attendence(message,user)
   	hour = Time.now.hour
   	min = Time.now.min
-  	create({weixin_user_id:user.id,message: message.content})
+  	create({weixin_user_id:user.id,content: message.content,message_id:message.id})
   	if (hour >= START_TIME && hour < END_TIME) || (hour == END_TIME && min == 0)
   		return "签到成功"
   	else

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Weixin user</th>
-      <th>Message</th>
+      <th>Content</th>
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
     <% @attendences.each do |attendence| %>
       <tr>
         <td><%= attendence.weixin_user.id %></td>
-        <td><%= attendence.message %></td>
+        <td><%= attendence.content %></td>
       </tr>
     <% end %>
   </tbody>
