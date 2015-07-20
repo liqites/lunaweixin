@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 	TOKEN=SETTING['auth']['token']
-	skip_before_filter :authenticate_user!, only: [:receive,:hello]
+	skip_before_filter :authenticate_user!, only: [:receive,:hello,:connect]
 
 	def receive
 		#收到信息时，记录下用户和签到时间
@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
 	end
 
 	def hello
-		version = "0.0.1"
+		version = "0.0.2"
 		render json: version
 	end
 
