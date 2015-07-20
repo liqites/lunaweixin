@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
 		msg = Attendence.create_attendence(message,from_wx_user)
 		#-------------
 
-		render json: {result: msg}
+		render json: {result:msg}
 	end
 
 	def hello
