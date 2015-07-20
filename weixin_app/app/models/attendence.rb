@@ -1,8 +1,8 @@
 class Attendence < ActiveRecord::Base
   belongs_to :weixin_user
 
-  START_TIME = 22
-	END_TIME = 23
+  START_TIME = 6
+	END_TIME = 8
 
   def self.create_attendence(message,user)
     content = message.content
