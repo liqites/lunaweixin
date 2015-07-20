@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  #resources :attendences
+  devise_for :users
+  #resources :users
+  resources :attendences, only: [:index]
   #resources :weixin_users
 
-  root 'messages#index'
+  root 'messages#connect'
   get '/hello' => 'messages#hello'
   post '/' => 'messages#receive'
   # The priority is based upon order of creation: first created -> highest priority.

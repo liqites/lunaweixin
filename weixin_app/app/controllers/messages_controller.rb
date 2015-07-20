@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
 	TOKEN=SETTING['auth']['token']
+	skip_before_filter :authenticate_user!, only: [:receive,:hello]
 
 	def receive
 		#收到信息时，记录下用户和签到时间
@@ -33,7 +34,7 @@ class MessagesController < ApplicationController
 		render json: version
 	end
 
-	def index
+	def connect
 		puts TOKEN
 		#验证token
 		if check_signature
