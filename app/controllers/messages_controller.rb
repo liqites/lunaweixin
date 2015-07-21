@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
 		#收到信息时，记录下用户和签到时间
 		msgdata =  params[:xml]
 		msg = ""
-		ActiveRecord::Base.transaction do 
+		ActiveRecord::Base.transaction do
 		begin
-			
+
 			#创建发送用户
 			from_wx_user = WeixinUser.find_by_openid(msgdata[:FromUserName])
 			if from_wx_user.nil?
@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
 			#-------------
 			msg = Attendence.create_attendence(message,from_wx_user)
 			#-------------
-			
+
 		rescue => e
 			puts e.message
 			puts e.backtrace
