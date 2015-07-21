@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root "weixin#connect"
+  post "/" =>  "weixin#message"
   #resources :users
   #resources :weixin_users
   # The priority is based upon order of creation: first created -> highest priority.

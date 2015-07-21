@@ -1,8 +1,10 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
+set :default_env, {path: "~/.rbenv/shims:~/.rbenv/bin:$PATH"}
 set :application, 'weixin_plantform'
-set :repo_url, 'git@github.com/liqites/lunaweixin.git'
+set :repo_url, 'https://github.com/liqites/lunaweixin.git'
+set :scm, :git
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -18,6 +20,7 @@ set :repo_url, 'git@github.com/liqites/lunaweixin.git'
 
 # Default value for :log_level is :debug
 # set :log_level, :debug
+set :log_level, :info
 
 # Default value for :pty is false
 # set :pty, true
@@ -34,15 +37,22 @@ set :repo_url, 'git@github.com/liqites/lunaweixin.git'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+after :deploy, "deploy:cleanup"
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
+namespace :deploy do
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/weixin_#{rails_env}_plantform"
+    sudo "ln -nfs #{current_paht}/config/unicorn/unicorn_#{rails_env}.sh /etc/init.d/unicorn_#{rails_env}"
   end
+
+
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     # Here we can do anything such as:
+  #     # within release_path do
+  #     #   execute :rake, 'cache:clear'
+  #     # end
+  #   end
+  # end
 
 end
