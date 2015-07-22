@@ -13,28 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150720060405) do
 
-  create_table "attendences", force: :cascade do |t|
-    t.integer  "weixin_user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "message_id"
-    t.string   "content"
-  end
-
-  add_index "attendences", ["message_id"], name: "index_attendences_on_message_id"
-  add_index "attendences", ["weixin_user_id"], name: "index_attendences_on_weixin_user_id"
-
-  create_table "messages", force: :cascade do |t|
-    t.string   "to_user"
-    t.string   "from_user"
-    t.datetime "create_time"
-    t.string   "msg_type"
-    t.string   "content"
-    t.string   "msg_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
@@ -52,12 +30,5 @@ ActiveRecord::Schema.define(version: 20150720060405) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "weixin_users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "openid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
