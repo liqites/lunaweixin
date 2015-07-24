@@ -1,0 +1,16 @@
+
+<div class="login mui-panel mui-z1">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="mui-form-group">
+    <%= f.email_field :email, autofocus: true ,class:"mui-form-control",placeholder:"Email"%>
+  </div>
+
+  <div class="mui-form-group">
+    <%= f.password_field :password, autocomplete: "off" ,class:"mui-form-control", placeholder:"Password"%>
+  </div>
+
+  <div class="mui-form-group">
+    <button class="mui-btn mui-btn-primary mui-btn-raised">Login</button>
+  </div>
+<% end %>
+</div>
