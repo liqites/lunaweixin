@@ -1,0 +1,16 @@
+@import 'mui';
+
+.header {
+  @extend .mui-z2;
+  height: 60px;
+  width: 100%;
+}
+
+.content {
+  @extend .mui-z1;
+  height: auto;
+  width: 95%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
