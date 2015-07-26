@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message type:</strong>
+  <%= @auto_message.message_type %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @auto_message.content %>
+</p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @auto_message.keyword %>
+</p>
+
+<%= link_to 'Edit', edit_auto_message_path(@auto_message) %> |
+<%= link_to 'Back', auto_messages_path %>

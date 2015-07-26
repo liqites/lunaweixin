@@ -4,12 +4,21 @@
   @extend .mui-z2;
   height: 60px;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0097A7;
+}
+
+.nav {
+	height: 95%;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .content {
-  @extend .mui-z1;
   height: auto;
-  width: 95%;
+  width: 80%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Auto Messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message type</th>
+      <th>Content</th>
+      <th>Keyword</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auto_messages.each do |auto_message| %>
+      <tr>
+        <td><%= auto_message.message_type %></td>
+        <td><%= auto_message.content %></td>
+        <td><%= auto_message.keyword %></td>
+        <td><%= link_to 'Show', auto_message %></td>
+        <td><%= link_to 'Edit', edit_auto_message_path(auto_message) %></td>
+        <td><%= link_to 'Destroy', auto_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Auto message', new_auto_message_path %>

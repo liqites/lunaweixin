@@ -1,0 +1,2 @@
+module AutoMessagesHelper
+end
