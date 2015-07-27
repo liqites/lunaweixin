@@ -16,10 +16,38 @@
 	margin-right: auto;
 }
 
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  background-color: none;
+}
+
 .content {
+  @extend .mui-panel,.mui-z1;
   height: auto;
   width: 80%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.t-btn {
+  @extend .mui-btn,.mui-z1;
+}
+
+.t-btn-ok {
+  @extend .mui-btn,.mui-btn-primary,.mui-z1;
+}
+
+.t-btn-candel {
+  @extend .mui-btn,.mui-btn-primary,.mui-z1;
+}
+
+.t-btn-default {
+  @extend .mui-btn,.mui-btn-default,.mui-z1;
+  background-color: #E0E0E0;
 }

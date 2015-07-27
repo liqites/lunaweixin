@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :custom_menus
   resources :auto_messages
   resources :offical_accounts
   resources :tasks

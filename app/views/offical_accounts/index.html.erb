@@ -1,27 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Offical Accounts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @offical_accounts.each do |offical_account| %>
+<div class="mui-tab-pane" id="pane-weixin">
+<h1>微信公众号</h1>
+  <table class="mui-table mui-table-bordered">
+    <thead>
       <tr>
-        <td><%= offical_account.name %></td>
-        <td><%= link_to 'Show', offical_account %></td>
-        <td><%= link_to 'Edit', edit_offical_account_path(offical_account) %></td>
-        <td><%= link_to 'Destroy', offical_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>名称</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @offical_accounts.each do |offical_account| %>
+        <tr>
+          <td><%= offical_account.name %></td>
+          <td><%= link_to '管理', offical_account %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Offical account', new_offical_account_path %>
+  <div class="mui-divider"></div>
+  <%= link_to '新建', new_offical_account_path,class:'t-btn-ok'%>
+</div>

@@ -11,12 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726130921) do
+ActiveRecord::Schema.define(version: 20150727070515) do
+
+  create_table "auto_messages", force: :cascade do |t|
+    t.integer  "message_type"
+    t.string   "content"
+    t.string   "keyword"
+    t.integer  "match_mode"
+    t.integer  "offical_accounts_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "custom_menu_id"
+  end
+
+  create_table "custom_menus", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "func"
+    t.integer  "offical_account_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth",              default: 0, null: false
+    t.integer  "children_count",     default: 0, null: false
+  end
 
   create_table "offical_accounts", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "projects", force: :cascade do |t|

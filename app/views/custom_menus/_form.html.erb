@@ -1,0 +1,25 @@
+<%= form_for(@custom_menu) do |f| %>
+  <% if @custom_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom_menu.errors.count, "error") %> prohibited this custom_menu from being saved:</h2>
+
+      <ul>
+      <% @custom_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :func %><br>
+    <%= f.number_field :func %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
