@@ -1,5 +1,9 @@
 @import 'mui';
 
+.hidden {
+  display: none;
+}
+
 .header {
   @extend .mui-z2;
   height: 60px;

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :custom_menus
-  resources :auto_messages
-  resources :offical_accounts
+  #resources :auto_messages
+  resources :offical_accounts do
+    resources :auto_messages
+  end
   resources :tasks
   resources :projects
   devise_for :users

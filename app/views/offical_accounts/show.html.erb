@@ -1,18 +1,17 @@
-
-
 <div class='mui-row'>
-  <div class='mui-col-md-3'>
-    <%= render partial: 'sidebar'%>
-  </div>
-  <div class="mui-col-md-9">
-    <p id="notice"><%= notice %></p>
+  <%= render partial: 'sidebar'%>
+  <div class="mui-col-md-10">
+    <div class="mui-tab-content">
 
-    <p>
-      <strong>名称:</strong>
-      <%= @offical_account.name %>
-    </p>
+      <div class="mui-tab-pane mui-active" id="messaging">
+        <%= render partial:'messaging'%>
+      </div>
+      <div class="mui-tab-pane" id="custom-menu">
 
-    <%= link_to '编辑', edit_offical_account_path(@offical_account) %> |
-    <%= link_to '返回', offical_accounts_path %>
+      </div>
+      <div class="mui-tab-pane mui-active" id="basic-info">
+
+      </div>
+    </div>
   </div>
 </div>

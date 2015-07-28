@@ -11,19 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :message_type %><br>
-    <%= f.number_field :message_type %>
+  <div class="field hidden">
+    <%= f.label :message_type,'消息类型:' %>
+    <%= f.select :message_type, select_message_type, class:'form-control'%>
   </div>
+
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :keyword %><br>
+    <%= f.label :keyword,'关键字' %>
     <%= f.text_field :keyword %>
   </div>
+
+  <div class="field">
+    <%= f.label :content,'消息内容' %>
+    <%= f.text_area :content %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '创建',class:'t-btn-default' %>
   </div>
 <% end %>

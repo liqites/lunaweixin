@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20150727070515) do
     t.string   "content"
     t.string   "keyword"
     t.integer  "match_mode"
-    t.integer  "offical_accounts_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "offical_account_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "custom_menu_id"
   end
 

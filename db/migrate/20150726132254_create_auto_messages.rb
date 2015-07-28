@@ -5,7 +5,7 @@ class CreateAutoMessages < ActiveRecord::Migration
       t.string :content
       t.string :keyword
       t.integer :match_mode
-      t.references :offical_accounts
+      t.references :offical_account
 
       t.timestamps null: false
     end

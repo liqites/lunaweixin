@@ -15,6 +15,7 @@ class AutoMessagesController < ApplicationController
   # GET /auto_messages/new
   def new
     @auto_message = AutoMessage.new
+    @auto_message.message_type = params[:message_type]
   end
 
   # GET /auto_messages/1/edit

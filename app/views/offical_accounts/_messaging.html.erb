@@ -1,0 +1,23 @@
+<table class="mui-table mui-table-bordered">
+  <thead>
+    <tr>
+      <th>关键词</th>
+      <th>匹配模式</th>
+      <th>回复类型</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auto_messages.each do |message| %>
+      <tr>
+        <td><%= message.keyword %></td>
+        <td><%= message.match_mode %></td>
+        <td><%= message.message_type %></td>
+        <td><%= link_to '管理', offical_account ,class:'t-btn-default'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to '新建关键字回复消息',new_offical_account_auto_message_path(@offical_account)+'?message_type=0',class:'t-btn-default'%>
+<%= link_to '新建关注回复消息',new_offical_account_auto_message_path(@offical_account)+'?message_type=1',class:'t-btn-default'%>

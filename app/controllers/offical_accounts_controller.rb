@@ -10,6 +10,7 @@ class OfficalAccountsController < ApplicationController
   # GET /offical_accounts/1
   # GET /offical_accounts/1.json
   def show
+    @auto_messages = @offical_account.auto_messages.where(message_type:[0,1])
   end
 
   # GET /offical_accounts/new
@@ -62,7 +63,7 @@ class OfficalAccountsController < ApplicationController
   end
 
   def manage
-    
+
   end
 
   private
