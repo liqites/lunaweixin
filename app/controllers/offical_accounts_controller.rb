@@ -1,5 +1,5 @@
 class OfficalAccountsController < ApplicationController
-  before_action :set_offical_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_offical_account, only: [:show, :edit, :update, :destroy, :manage]
 
   # GET /offical_accounts
   # GET /offical_accounts.json
@@ -25,7 +25,7 @@ class OfficalAccountsController < ApplicationController
   # POST /offical_accounts.json
   def create
     @offical_account = OfficalAccount.new(offical_account_params)
-
+    @offical_account.user = current_user
     respond_to do |format|
       if @offical_account.save
         format.html { redirect_to @offical_account, notice: 'Offical account was successfully created.' }
@@ -59,6 +59,10 @@ class OfficalAccountsController < ApplicationController
       format.html { redirect_to offical_accounts_url, notice: 'Offical account was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def manage
+    
   end
 
   private

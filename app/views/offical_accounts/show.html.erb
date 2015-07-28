@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @offical_account.name %>
-</p>
 
-<%= link_to 'Edit', edit_offical_account_path(@offical_account) %> |
-<%= link_to 'Back', offical_accounts_path %>
+<div class='mui-row'>
+  <div class='mui-col-md-3'>
+    <%= render partial: 'sidebar'%>
+  </div>
+  <div class="mui-col-md-9">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>名称:</strong>
+      <%= @offical_account.name %>
+    </p>
+
+    <%= link_to '编辑', edit_offical_account_path(@offical_account) %> |
+    <%= link_to '返回', offical_accounts_path %>
+  </div>
+</div>
