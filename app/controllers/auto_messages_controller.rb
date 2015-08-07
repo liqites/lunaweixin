@@ -26,10 +26,11 @@ class AutoMessagesController < ApplicationController
   # POST /auto_messages.json
   def create
     @auto_message = AutoMessage.new(auto_message_params)
+    @auto_message.offical_account = get_offical_account
 
     respond_to do |format|
       if @auto_message.save
-        format.html { redirect_to @auto_message, notice: 'Auto message was successfully created.' }
+        format.html { redirect_to get_offical_account, notice: 'Auto message was successfully created.' }
         format.json { render :show, status: :created, location: @auto_message }
       else
         format.html { render :new }
@@ -68,8 +69,12 @@ class AutoMessagesController < ApplicationController
       @auto_message = AutoMessage.find(params[:id])
     end
 
+    def get_offical_account
+      OfficalAccount.find_by_id(params[:offical_account_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def auto_message_params
-      params.require(:auto_message).permit(:message_type, :content, :keyword)
+      params.require(:auto_message).permit(:message_type, :content, :keyword, :match_mode)
     end
 end

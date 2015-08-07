@@ -1,4 +1,4 @@
-<%= form_for(@auto_message) do |f| %>
+<%= form_for([:offical_account,@auto_message]) do |f| %>
   <% if @auto_message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@auto_message.errors.count, "error") %> prohibited this auto_message from being saved:</h2>
@@ -18,12 +18,17 @@
 
   <div class="field">
     <%= f.label :keyword,'关键字' %>
-    <%= f.text_field :keyword %>
+    <%= f.text_field :keyword, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :match_mode, '匹配模式' %>
+    <%= f.select :match_mode, select_match_mode, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :content,'消息内容' %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content ,class: 'form-control'%>
   </div>
 
   <div class="actions">

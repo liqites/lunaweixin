@@ -55,3 +55,4 @@ gem 'devise'
 gem 'awesome_nested_set'
 gem 'grape'
 gem "hashie-forbidden_attributes"
+gem 'wisper'

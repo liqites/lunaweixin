@@ -12,9 +12,8 @@
     <% @auto_messages.each do |message| %>
       <tr>
         <td><%= message.keyword %></td>
-        <td><%= message.match_mode %></td>
-        <td><%= message.message_type %></td>
-        <td><%= link_to '管理', offical_account ,class:'t-btn-default'%></td>
+        <td><%= message.match_mode_text %></td>
+        <td><%= message.message_type_text %></td>
       </tr>
     <% end %>
   </tbody>
