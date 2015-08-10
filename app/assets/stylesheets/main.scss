@@ -10,7 +10,11 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #0097A7;
+  background-color: #78909C;
+}
+
+.highlight {
+  background: #f8f8f8;
 }
 
 .nav {
@@ -20,14 +24,15 @@
 	margin-right: auto;
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  text-decoration: none;
-  background-color: #0097A7;
+a {
+  color: #000;
+  &:visited {
+    color: #000;
+  }
+  &:hover {
+    color: #000;
+    background-color: #f8f8f8;
+  }
 }
 
 .content {
@@ -37,6 +42,14 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.offical_account {
+  @extend .mui-z1;
+  height: 120px;
+  width: 33%;
+  margin: 5px;
+  text-align: center;
 }
 
 .t-btn {

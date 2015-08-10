@@ -1,0 +1,13 @@
+<div class="mui-container">
+	<% @offical_accounts.each_slice(3).to_a.each do |accounts| %>
+		<div class="mui-row">
+			<% accounts.each do |a| %>
+			<div class="mui-col-md-4">
+				<div class="mui-text-display3 mui-text-black mui-text-center offical_account">
+					<%= link_to a.name,offical_account_path(a)%>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
