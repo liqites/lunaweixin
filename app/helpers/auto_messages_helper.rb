@@ -1,9 +1,9 @@
 module AutoMessagesHelper
   def select_message_type
-    AutoMessage.message_type_select
+    AutoMessage::MESSAGE_TYPE.collect{|a|a.reverse}
   end
 
   def select_match_mode
-    AutoMessage.match_mode_select
+    AutoMessage::MATCH_MODE.collect{|a|a.reverse}
   end
 end

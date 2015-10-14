@@ -46,7 +46,6 @@ group :development, :test do
 
   gem 'capistrano-rails', '~> 1.1.1'
 end
-
 gem 'settings'
 gem 'unicorn'
 gem 'capistrano'

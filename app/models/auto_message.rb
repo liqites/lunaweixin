@@ -1,4 +1,5 @@
 class AutoMessage < ActiveRecord::Base
+
   MATCH_MODE=[[0,'完全'],[1,'部分']]
   MESSAGE_TYPE=[[0,'关键词消息'],[1,'关注消息'],[2,'菜单消息']]
 
@@ -18,16 +19,6 @@ class AutoMessage < ActiveRecord::Base
   def validate_unquness_of_message_type
     if message_type == 1 && AutoMessage.where(message_type:1,offical_account_id: offical_account_id).count > 0
       errors[:message_type] << "只能添加一条关注回复消息"
-    end
-  end
-
-  class << self
-    def message_type_select
-      MESSAGE_TYPE.collect{|a|a.reverse}
-    end
-
-    def match_mode_select
-      MATCH_MODE.collect{|a|a.reverse}
     end
   end
 end

@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
+	skip_before_action :authenticate_user!
+	layout 'works'
   def home
-  	@offical_accounts = current_user.offical_accounts
   end
 end

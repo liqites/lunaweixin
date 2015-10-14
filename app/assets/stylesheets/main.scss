@@ -10,7 +10,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #78909C;
+  background-color: rgb(56,122,159);
 }
 
 .highlight {
@@ -42,14 +42,7 @@ a {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.offical_account {
-  @extend .mui-z1;
-  height: 120px;
-  width: 33%;
-  margin: 5px;
-  text-align: center;
+  background-color: rgb(229,236,225);
 }
 
 .t-btn {
